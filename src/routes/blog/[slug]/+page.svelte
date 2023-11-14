@@ -1,9 +1,10 @@
 <script>
-    import { page } from "$app/stores";
+    export let data;
 </script>
 
 <section>
-	<h1>Blog: {$page.params.slug}</h1>
+	<h1>{data.post?.title}</h1>
+    <div>{@html data.post?.content}</div>
 </section>
 
 <style>
