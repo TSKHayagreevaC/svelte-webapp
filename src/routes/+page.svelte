@@ -1,4 +1,5 @@
 <script>
+	export let data;
 </script>
 
 <svelte:head>
@@ -7,7 +8,8 @@
 </svelte:head>
 
 <section>
-	<h1>Home Page</h1>
+	<h1>Home</h1>
+	<h3>Hello {data.visited ? 'Friend' : 'Stranger'}!</h3>
 </section>
 
 <style>
