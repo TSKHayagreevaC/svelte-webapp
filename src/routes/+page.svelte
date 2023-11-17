@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	import { message } from '$lib/message.js';
 </script>
 
 <svelte:head>
@@ -8,8 +9,8 @@
 </svelte:head>
 
 <section>
-	<h1>Home</h1>
 	<h3>Hello {data.visited ? 'Friend' : 'Stranger'}!</h3>
+	<h1>{message}</h1>
 </section>
 
 <style>
