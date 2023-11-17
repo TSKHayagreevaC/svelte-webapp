@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - Added 'Routes' setup.
 - Added 'Forms' setup.
 - Added 'API Routes'.
+- Added 'Store' setup.
 
 ## Changed
 
