@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page, navigating } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
 </script>
@@ -48,6 +48,9 @@
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
+	{#if $navigating}
+		navigating to {$navigating?.to?.url.pathname}
+	{/if}
 </header>
 
 <style>
