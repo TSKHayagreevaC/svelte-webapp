@@ -15,8 +15,14 @@ export function load({ cookies }) {
 
 export const actions = {
 	// @ts-ignore
-	default: async ({ cookies, request }) => {
+	create: async ({ cookies, request }) => {
 		const data = await request.formData();
 		db.createTodo(cookies.get('userid'), data.get('description'));
+	},
+
+	// @ts-ignore
+	delete: async ({ cookies, request }) => {
+		const data = await request.formData();
+		db.deleteTodo(cookies.get('userid'), data.get('id'))
 	}
 };

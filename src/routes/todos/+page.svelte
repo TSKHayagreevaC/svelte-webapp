@@ -5,7 +5,7 @@
 <div class="centered">
 	<h1>todos</h1>
 
-	<form method="POST">
+	<form method="POST" action="?/create">
 		<label>
 			add a todo:
 			<input
@@ -18,7 +18,11 @@
 	<ul class="todos">
 		{#each data.todos as todo (todo.id)}
 			<li>
-				{todo.description}
+				<form method="POST" action="?/delete">
+					<input type="hidden" name="id" value={todo.id} />
+					<span>{todo.description}</span>
+					<button aria-label="Mark as complete" />
+				</form>
 			</li>
 		{/each}
 	</ul>
@@ -28,6 +32,26 @@
 	.centered {
 		max-width: 20em;
 		margin: 0 auto;
+	}
+
+	ul {
+		list-style: none;
+		padding: 5px;
+	}
+
+	li {
+		border: 1px solid grey;
+		border-radius: 3px;
+		margin-bottom: 0.5rem;
+		background-color: white;
+	}
+	
+	form {
+		padding: 5px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	label {
