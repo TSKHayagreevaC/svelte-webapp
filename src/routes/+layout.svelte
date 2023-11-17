@@ -11,7 +11,8 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev" target="_blank">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Visit <a href="https://github.com/TSKHayagreevaC/svelte-webapp" target="_blank">svelte-webapp@github.com</a> [Git Repository]</p>
+		<p>Copyright © [TSKHayagreevaC] [2023]. All rights reserved.</p>
 	</footer>
 </div>
 
