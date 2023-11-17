@@ -1,26 +1,63 @@
 <script>
+	export let data;
 </script>
 
-<svelte:head>
-	<title>Todos</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="centered">
+	<h1>todos</h1>
 
-<section>
-	<h1>Todos</h1>
-</section>
+	<form method="POST">
+		<label>
+			add a todo:
+			<input
+				name="description"
+				autocomplete="off"
+			/>
+		</label>
+	</form>
+
+	<ul class="todos">
+		{#each data.todos as todo (todo.id)}
+			<li>
+				{todo.description}
+			</li>
+		{/each}
+	</ul>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+	.centered {
+		max-width: 20em;
+		margin: 0 auto;
 	}
 
-	h1 {
+	label {
 		width: 100%;
 	}
 
+	input {
+		flex: 1;
+	}
+
+	span {
+		flex: 1;
+	}
+
+	button {
+		border: none;
+		background: url(./remove.svg) no-repeat 50% 50%;
+		background-size: 1rem 1rem;
+		cursor: pointer;
+		height: 100%;
+		aspect-ratio: 1;
+		opacity: 0.5;
+		transition: opacity 0.2s;
+	}
+
+	button:hover {
+		opacity: 1;
+	}
+
+	.saving {
+		opacity: 0.5;
+	}
 </style>
