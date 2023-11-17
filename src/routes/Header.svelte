@@ -1,5 +1,5 @@
 <script>
-	import { page, navigating } from '$app/stores';
+	import { page, navigating, updated } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
 </script>
@@ -48,9 +48,21 @@
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
+
 	{#if $navigating}
 		navigating to {$navigating?.to?.url.pathname}
 	{/if}
+
+	{#if $updated}
+		<p class="toast">
+			A new version of the app is available
+
+			<button on:click={() => location.reload()}>
+				reload the page
+			</button>
+		</p>
+	{/if}
+	
 </header>
 
 <style>
